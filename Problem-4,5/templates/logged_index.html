@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Logged in as {{user}}</h2>
+
+<form action="logout" method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Log Out">
+</form>
+
+<h2>Calculate Problem No. 1</h2>
+<form action="solve1" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    Enter value of x: <input type="number" name="x">
+  </div>
+
+  <div class="mb-3">
+    Enter value of n: <input type="number" name="n">
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Calculate">
+</form>
+
+{% endblock %}
